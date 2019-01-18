@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
-import SelectForm from './Components/SelectForm';
+import SelectForm from './components/SelectForm';
+import Reps from './components/Reps';
+
 
 class App extends Component {
   render() {
     return (
-     <SelectForm/>
+      <Fragment>
+        <SelectForm />
+        <Reps />
+      </Fragment>
+
     );
   }
 }
