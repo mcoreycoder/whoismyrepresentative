@@ -1,14 +1,32 @@
- [
-    {
-    "name": "Karen Bass",
-    "party": "Democrat",
-    "state": "CA"
-    },
-    {
-    "name": "Ken Calvert",
-    "party": "Republican",
-    "state": "CA"
-    }
-
-    ]
-    
+[
+   {
+      "name": "Karen Bass",
+      "party": "Democrat",
+      "state": "CA"
+   },
+   {
+      "name": "Ken Calvert",
+      "party": "Republican",
+      "state": "CA"
+   },
+   {
+      "name": "Rob Bishop",
+      "party": "Republican",
+      "state": "UT"
+   },
+   {
+      "name": "Chris Stewart",
+      "party": "Republican",
+      "state": "UT"
+   },
+   {
+      "name": "John Curtis",
+      "party": "Republican",
+      "state": "UT"
+   },
+   {
+      "name": "Ben McAdams",
+      "party": "Democrat",
+      "state": "UT"
+   }
+]
