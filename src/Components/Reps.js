@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 // import RepsData from '../testdata/repsdata'
 // import SensData from '../testdata/sensdata'
 
-import { repState,  } from '../filters'
+// import { repState,  } from '../filters'
 import stateOptions from '../testdata/states_hash'
 
 
@@ -14,12 +14,14 @@ export default class extends Component {
         legislativeBranch: '',
         selectState: '',
         repsmapped: [],
+        apiCollection: null,
 
     }
 
-    renderReps = () => {
+    renderReps = (reps) => {
         // return repState(this.state.selectState).map(person => <Rep rep={person} />)
-        return repState(this.state.selectState).map(person => <Rep rep={person} />)
+        // return this.state.apiCollection.map(key => <Rep rep={key} />)
+        return <Rep reps={reps} />
     }
 
     submitHandler = async (event) => {
@@ -33,12 +35,24 @@ export default class extends Component {
 
         // const UtahReps = await fetch('http://localhost:3000/representatives/ut')
         //     .then(result => result.json())
-        const StateReps = await fetch(apiUrl)
-            .then(result => result.json())
-        console.log(StateReps)
+        let result = await fetch(apiUrl);
+        let data = await result.json();
+        const StateReps = await data.results
+            // .then(result => result.json()
+            // .then( data=>{ console.log("YO YO YO", data.results)}))
+        // const StateReps = [{
+        //         name: "TESTMENAME1"
+        //     },{
+        //         name: "TEsTNAME2"
+        //     }]
+        console.log("State Reps equals", StateReps)
         console.log(this.state.selectState , this.state.legislativeBranch)
-        // this.setState({ repsmapped: this.renderReps(this.state.selectState) })
-        this.setState({ repsmapped: this.renderReps(this.state.selectState) })
+
+        this.setState({ apiCollection: StateReps }, function(){
+            console.log("apiCollection After setState", this.state.apiCollection)
+        })
+        this.setState({ repsmapped: this.renderReps(this.state.apiCollection) })
+        console.log("apiCollection results", this.state.apiCollection)
 
     }
 
