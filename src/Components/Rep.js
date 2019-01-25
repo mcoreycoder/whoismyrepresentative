@@ -1,35 +1,42 @@
-import React, {Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 
 export default class extends Component {
 
-    constructor(props){
-        super(props);
-        this.listReps = (reps) => {
-            return ( 
-                reps.map( (val, indx) =>{
-                    return (
-                        <Fragment>
-                            <div><h1>{val.name}</h1></div>
-                            <div><h2>{val.party}</h2></div>
-                        </Fragment>
-                    )
-                })
-            )
-         }
-    }
+    // constructor(props){
+    //     super(props);
+    //     
+    // }
 
 
 
     render() {
-        return(
-            <div>
-                {/* hi there */}
-                {this.listReps(this.props.reps)}
-                {/* <br/>
-                {this.props.rep.party}
-                <br/>
-                {this.props.rep.state} */}
-            </div>
+        return (
+            <Fragment>
+                <div>
+                    Name: {this.props.rep.name}
+                    <br />
+                    Party: {this.props.rep.party}
+                </div>
+                <div>
+                    District: {this.props.rep.district}
+                    <br />
+                    State: {this.props.rep.state}
+                    <br />
+                    Phone: {this.props.rep.phone}
+                    <br />
+                    Office: {this.props.rep.office}
+                    <br />
+                    Web Site: {this.props.rep.link}
+                </div>
+            </Fragment>
         )
     }
 }
+
+// district: "0"
+// link: "https://donyoung.house.gov"
+// name: "Don Young"
+// office: "2314 Rayburn House Office Building; Washington DC 20515-0200"
+// party: "Republican"
+// phone: "202-225-5765"
+// state: "AK"
