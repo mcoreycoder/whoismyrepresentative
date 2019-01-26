@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 
-import stateOptions from '../testdata/states_hash'
+import stateOptions from '../stateData/states_hash'
 
 import Rep from './Rep'
 
