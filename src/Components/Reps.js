@@ -35,6 +35,7 @@ export default class extends Component {
             key => <option value={key}>{Object.values(stateOptions[key])}</option>)
 
         return (
+            <div className="container" >
             <Fragment>
                 <form onSubmit={this.submitHandler}>
                     Legislative Branch: {" "}
@@ -53,10 +54,10 @@ export default class extends Component {
                     <br />
                     <input type="submit" value="Submit"></input>
                 </form>
-                <br />
-                <br />
+                <hr />
                 {this.state.repsmapped}
             </Fragment>
+            </div>
         )
     }
 }

@@ -8,8 +8,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        {/* <SelectForm /> */}
-        <Reps />
+        <Reps/>
       </Fragment>
 
     );
