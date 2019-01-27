@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
-// import SelectForm from './components/SelectForm';
-import Reps from './components/Reps';
+
+import Reps from './Components/Reps';
 
 
 class App extends Component {
