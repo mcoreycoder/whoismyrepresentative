@@ -2,7 +2,7 @@
   "name": "whoismyrepresentative",
   "version": "0.1.0",
   "private": true,
-  "homepage": "",
+  "homepage": "https://mcoreycoder.github.io/whoismyrepresentative/",
   "dependencies": {
     "@material-ui/core": "^3.9.1",
     "gh-pages": "^2.0.1",
