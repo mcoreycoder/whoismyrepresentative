@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react'
+import Button from '@material-ui/core/Button';
 
 import selectStateOptions from '../stateData/states_hash'
 import congress_drawing from '../images/congress_drawing.jpg'
 
 import Rep from './Rep'
+
 
 export default class extends Component {
     state = {
@@ -50,26 +52,26 @@ export default class extends Component {
             <div className="container" >
                 <Fragment>
                     <div>
-                    
-                    <form onSubmit={this.submitHandler}>
-                    <img src={congress_drawing} alt="congress_drawin"/>
-                        <b>Search by:</b>
-                        <br />
-                        Representative or Senator: {" "}
-                        <select onChange={event => this.setState({ legislativeBranch: event.target.value })}>
-                            <option>Select Representative or Senator</option>
-                            <option value="representatives">Representative</option>
-                            <option value="senators">Senator</option>
-                        </select>
-                        <br />
-                        Select State: {" "}
-                        <select onChange={event => this.setState({ selectState: event.target.value })}>
-                            <option>Select State</option>
-                            {stateOption}
-                        </select>
-                        <br />
-                        <input type="submit" value="Submit"></input>
-                    </form>
+                        <form onSubmit={this.submitHandler}>
+                            <img src={congress_drawing} alt="congress_drawin" />
+                            <br />
+                            <b>Search by:</b>
+                            <br />
+                            Representative or Senator: {" "}
+                            <select onChange={event => this.setState({ legislativeBranch: event.target.value })}>
+                                <option>Select Representative or Senator</option>
+                                <option value="representatives">Representative</option>
+                                <option value="senators">Senator</option>
+                            </select>
+                            <br />
+                            Select State: {" "}
+                            <select onChange={event => this.setState({ selectState: event.target.value })}>
+                                <option>Select State</option>
+                                {stateOption}
+                            </select>
+                            <br />
+                            <Button variant="contained" type="submit" value="Submit">Submit</Button>
+                        </form>
                     </div>
                     <hr />
                     {this.state.repsmapped}
