@@ -37,10 +37,11 @@
 .paper {
   width: 40%;
   display: inline-block;
-  margin: 2%;
-  border: 1px black solid;
+  margin: 1%;
+  border: 2px black solid;
   padding: 4px;
-  align-content: center;
+  background: darkgray !important;
+  vertical-align: top;
 }
 
 .deets {
