@@ -27,7 +27,8 @@ export default class extends Component {
             alert("Please Select Legislative Branch and State");
         } else if (this.state.legislativeBranch !== '' || this.state.selectState !== '') {
             event.preventDefault()
-            const baseUrl = 'http://localhost:3000/';
+            // const baseUrl = 'http://localhost:3000/';
+            const baseUrl = 'https://warm-forest-70819.herokuapp.com/';
             const postUrl = (baseUrl, legislativeBranch, selectState) => {
                 let newUrl = baseUrl + legislativeBranch + '/' + selectState;
                 return newUrl;
