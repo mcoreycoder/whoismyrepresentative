@@ -1,10 +1,12 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react';
+
 import Button from '@material-ui/core/Button';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
-import selectStateOptions from '../stateData/states_hash'
-import congress_drawing from '../images/congress_drawing.jpg'
+import selectStateOptions from '../stateData/states_hash';
+import congress_drawing from '../images/congress_drawing.jpg';
 
-import Rep from './Rep'
+import Rep from './Rep';
 
 
 export default class extends Component {
@@ -12,9 +14,11 @@ export default class extends Component {
         legislativeBranch: '',
         selectState: '',
         repsmapped: [],
+        loading: false,
     }
 
     renderReps = (StateReps) => {
+        this.setState({loading : false});
         return StateReps.map(key => <Rep rep={key} />)
     }
 
@@ -26,8 +30,10 @@ export default class extends Component {
             event.preventDefault()
             alert("Please Select Legislative Branch and State");
         } else if (this.state.legislativeBranch !== '' || this.state.selectState !== '') {
-            event.preventDefault()
+            event.preventDefault();
+            this.setState({loading : true});
             // const baseUrl = 'http://localhost:3000/';
+            //may want to change below to be set up in a .env file to hide api
             const baseUrl = 'https://warm-forest-70819.herokuapp.com/';
             const postUrl = (baseUrl, legislativeBranch, selectState) => {
                 let newUrl = baseUrl + legislativeBranch + '/' + selectState;
@@ -44,6 +50,7 @@ export default class extends Component {
             };
         }
     };
+    
 
     render() {
         const stateOption = Object.keys(selectStateOptions).map(
@@ -75,6 +82,10 @@ export default class extends Component {
                         </form>
                     </div>
                     <hr />
+                    <div className={this.state.loading ? true : 'hidden'}>
+                    <b>Processing the request...</b>
+                    <LinearProgress />
+                    </div>
                     {this.state.repsmapped}
                 </Fragment>
             </div>

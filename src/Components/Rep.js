@@ -37,7 +37,7 @@ export default class extends Component {
                             <br />
                             Office: {this.props.rep.office}
                             <br />
-                            Web Site: <a href="{this.props.rep.link}" target="_blank">{this.props.rep.link}</a>
+                            Web Site: <a href={this.props.rep.link} target="_blank" rel="noopener noreferrer">{this.props.rep.link}</a>
                         </div>
                     </div>
                 </Paper>
